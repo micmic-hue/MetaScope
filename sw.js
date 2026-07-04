@@ -1,4 +1,4 @@
-const CACHE_NAME = "metascope-pwa-v1";
+const CACHE_NAME = "metascope-pwa-v2";
 
 const APP_SHELL = [
     "./",
@@ -61,6 +61,10 @@ self.addEventListener("fetch", function (event) {
         caches.match(event.request)
             .then((cached) => cached || fetch(event.request)
                 .then((response) => {
+                    if (!response || response.status !== 200) {
+                        return response;
+                    }
+
                     const copy = response.clone();
 
                     caches.open(CACHE_NAME)
