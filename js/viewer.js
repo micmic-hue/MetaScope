@@ -19,6 +19,7 @@ const Viewer = {
 
         activePhotoInfo.textContent = "Aucune photo active.";
         fileInfo.innerHTML = "";
+        C2PA.clear();
 
     }
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>MetaScope C2PA Browser Check</title>
+</head>
+<body>
+<pre id="result">pending</pre>
+
+<script src="../js/c2pa.js"></script>
+<script>
+(async function () {
+    const result = document.getElementById("result");
+
+    try {
+        const response = await fetch("fixtures/metascope-c2pa-photo.jpg");
+        const blob = await response.blob();
+        const file = new File([blob], "metascope-c2pa-photo.jpg", { type: "image/jpeg" });
+        const report = await C2PA.load(file);
+
+        if (!report.found) {
+            throw report.error || new Error("C2PA not found");
+        }
+
+        result.textContent = JSON.stringify({
+            found: report.found,
+            format: report.result.format,
+            c2paFormat: report.result.c2pa.format,
+            jumbfBoxes: report.result.jumbf.flattened.length,
+            cborBoxes: report.result.jumbf.cborBoxes.length,
+            hasManifest: Boolean(report.result.manifest.cbor)
+        }, null, 2);
+    } catch (error) {
+        result.textContent = "ERROR: " + error.name + ": " + error.message;
+        console.error(error);
+    }
+}());
+</script>
+</body>
+</html>
