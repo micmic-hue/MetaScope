@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MetaScope</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<main>
+
+    <header>
+
+        <h1>MetaScope</h1>
+
+        <p class="tagline">🔒 LOCAL ONLY</p>
+
+    </header>
+
+    <input
+        type="file"
+        id="photoPicker"
+        accept="image/*"
+        multiple
+        hidden>
+
+    <button id="pickButton">
+        📷 Choisir des photos
+    </button>
+
+<section id="viewer">
+
+    <p id="selectionInfo">
+        Aucune photo sélectionnée.
+    </p>
+
+    <p id="activePhotoInfo">
+        Aucune photo active.
+    </p>
+
+    <div class="panel">
+
+    <h3>📁 Fichier</h3>
+
+    <div id="fileInfo"></div>
+
+</div>
+
+<div class="panel">
+
+    <h3>📷 EXIF</h3>
+
+    <div id="exifInfo">
+        Aucune donnée EXIF.
+    </div>
+
+</div>
+
+</section>
+
+
+<section id="gallery">
+
+    </section>
+
+</main>
+
+
+<script src="js/config.js"></script>
+<script src="js/lib/exifreader/exif-reader.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/exif.js"></script>
+<script src="js/viewer.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+
+</html>

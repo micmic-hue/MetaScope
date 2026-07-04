@@ -1,0 +1,19 @@
+src/
+
+BinaryReader.js        (~400 lignes)
+BinaryWriter.js        (~150 lignes)
+Utils.js               (~250 lignes)
+
+JPEGParser.js          (~700 lignes)
+
+PNGParser.js           (~300 lignes)
+
+BMFFParser.js          (~900 lignes)
+
+CBORDecoder.js         (~900 lignes)
+
+ManifestParser.js      (~700 lignes)
+
+AssertionParser.js     (~600 lignes)
+
+C2PAReader.js          (~300 lignes)

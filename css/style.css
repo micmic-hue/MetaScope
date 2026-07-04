@@ -1,0 +1,89 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:#111827;
+    color:#F9FAFB;
+    min-height:100vh;
+}
+
+main{
+    max-width:500px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:40px;
+}
+
+header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+h1{
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.tagline{
+    color:#34D399;
+    margin-top:10px;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+#pickButton{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:16px;
+    background:#2563EB;
+    color:white;
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:.2s;
+}
+
+#pickButton:hover{
+    background:#1D4ED8;
+}
+
+#gallery{
+    margin-top:30px;
+    color:#9CA3AF;
+    text-align:center;
+}
+
+#gallery{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.thumbnail{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:12px;
+    cursor:pointer;
+    transition:transform .2s;
+}
+
+.thumbnail:hover{
+    transform:scale(1.05);
+}
+.thumbnail.active{
+    border:4px solid #2563EB;
+}
